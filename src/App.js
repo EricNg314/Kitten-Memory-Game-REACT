@@ -13,7 +13,9 @@ import './App.css';
 class App extends Component {
 
   state = {
-    kittens
+    kittens,
+    score: 0,
+    top_score: 0,
   };
 
   selectKitten = id => {
@@ -26,7 +28,7 @@ class App extends Component {
 
       <Router>
         <div>
-          <Navbar />
+          <Navbar score={this.state.score}/>
           <Jumbotron />
           <Wrapper>
             <Route exact path="/" component={""} />
