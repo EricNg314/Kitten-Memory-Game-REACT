@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ytimg.com/vi/BgIgKcqPd4k/maxresdefault.jpg",
+        "selected": false
+    },{
+        "id": 2,
+        "image": "https://www.catster.com/wp-content/uploads/2017/12/A-gray-kitten-meowing.jpg",
+        "selected": false
+    },{
+        "id": 3,
+        "image": "https://4fi8v2446i0sw2rpq2a3fg51-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/KittenProgression-Darling-week3.jpg",
+        "selected": false
+    },{
+        "id": 4,
+        "image": "https://www.petmd.com/sites/default/files/petmd-kitten-facts.jpg",
+        "selected": false
+    },{
+        "id": 5,
+        "image": "https://www.thehappycatsite.com/wp-content/uploads/2017/10/best-treats-for-kittens.jpg",
+        "selected": false
+    },{
+        "id": 6,
+        "image": "https://static1.squarespace.com/static/54e8ba93e4b07c3f655b452e/t/57cf3d2846c3c4d2933a9d28/1474332420480/DSC_5454.jpg",
+        "selected": false
+    },{
+        "id": 7,
+        "image": "https://www.pets4homes.co.uk/images/articles/4295/large/early-neutering-of-kittens-pros-and-cons-598ddb68021a9.jpg",
+        "selected": false
+    },{
+        "id": 8,
+        "image": "https://kittenrescue.org/wp-content/uploads/2017/03/KittenRescue_KittenCareHandbook.jpg",
+        "selected": false
+    },{
+        "id": 9,
+        "image": "http://www.winterbrooksiberians.com/yahoo_site_admin/assets/images/Cat_Yusha_11.279155323_std.jpg",
+        "selected": false
+    },{
+        "id": 10,
+        "image": "http://en.bcdn.biz/images/emails_source/5aa1d06c-d409-4d4a-8d4f-d90f51350047.jpg",
+        "selected": false
+    },{
+        "id": 11,
+        "image": "http://dejohnpetservices.com/wp-content/uploads/cats-animals-kittens-background.jpg",
+        "selected": false
+    },{
+        "id": 12,
+        "image": "https://blog.utc.edu/news/files/2017/03/bigstock-146149823-blue-gold-kittens.jpg",
+        "selected": false
+    }
+]

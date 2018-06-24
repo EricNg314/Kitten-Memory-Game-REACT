@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = props => (
-    <nav class="navbar d-flex navbar-expand-lg navbar-light bg-primary text-center">
+    <nav className="navbar sticky-top d-flex navbar-expand-lg navbar-light bg-primary text-center">
 
         <div className="col-md-4">
         <Link to="/" className="text-light" ><h2>Kitten Memory Game</h2>
