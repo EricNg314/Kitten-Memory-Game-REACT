@@ -18,41 +18,51 @@ class App extends Component {
     top_score: 0
   };
 
+
   selectKitten = id => {
-
-
+    let score = this.state.score;
     let kitten = this.state.kittens.filter(kitten => kitten.id === id)[0];
-    console.log("selected kitten", kitten);
+    // console.log("selected kitten", kitten);
     // console.log(`id: ${id}`);
 
-    if (kitten.selected == false) {
-      // console.log("entered selected false")
-      this.state.score += 1;
+    if (kitten.selected === false) {
+      //preparing for different scorings
+      score += 1;
       // this.setState({ score: this.state.score + 1 });
       setTimeout(() => console.log(this.state.score), 100);
       // console.log(kitten);
 
       kitten.selected = true;
 
-      this.setState(this.shuffle(this.state.kittens));
+      this.setState({score, kittens: this.shuffle(this.state.kittens)});
 
     } else {
-      this.setState(this.endGame());
+      this.endGame();
 
     }
   };
 
   endGame = () => {
+    let top_score = this.state.top_score;
+    let score = this.state.score;
+
     if (this.state.top_score < this.state.score) {
-      this.setState({ top_score: this.state.score });
+      top_score = score;
+      // this.setState({ top_score: this.state.score });
     }
-    this.state.score = 0;
-    // this.state.kittens.
-    console.log("End game.")
+
+    // this.state.score = 0;
+    score = 0;
+    this.state.kittens.map((kitten, index) => {
+      return kitten.selected = false;
+      // this.state.kittens[index].selected = false;
+
+    })
+    this.setState({score, top_score})
   }
 
   shuffle = array => {
-    console.log("shuffled");
+    // console.log("shuffled");
 
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -65,7 +75,6 @@ class App extends Component {
   render() {
     // console.log(this.state.kittens)
     return (
-
       <Router>
         <div>
           <Navbar score={this.state.score} top_score={this.state.top_score} />
