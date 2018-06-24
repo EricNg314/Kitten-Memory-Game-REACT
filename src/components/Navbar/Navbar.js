@@ -13,7 +13,7 @@ const Navbar = props => (
             <h2 className="text-light" >Click a kitten image below.</h2>
         </div>
         <div className="col-md-4">
-            <h2 className="text-light" >Score : </h2>
+            <h2 className="text-light" >Score : {props.score} | Top: {props.top_score}</h2>
         </div>
 
     </nav>
