@@ -15,26 +15,36 @@ class App extends Component {
   state = {
     kittens,
     score: 0,
-    top_score: 0
+    top_score: 0,
+    old_top_score: 0,
+    message: ""
   };
 
 
   selectKitten = id => {
+    let message = this.state.message;
     let score = this.state.score;
+    let top_score = this.state.top_score;
+    let old_top_score = this.state.old_top_score;
     let kitten = this.state.kittens.filter(kitten => kitten.id === id)[0];
     // console.log("selected kitten", kitten);
     // console.log(`id: ${id}`);
 
     if (kitten.selected === false) {
       //preparing for different scorings
+      message = "";
       score += 1;
       // this.setState({ score: this.state.score + 1 });
-      setTimeout(() => console.log(this.state.score), 100);
+      // setTimeout(() => console.log(this.state.score), 100);
       // console.log(kitten);
+
+      if(top_score < score) {
+        top_score = score;
+      }
 
       kitten.selected = true;
 
-      this.setState({score, kittens: this.shuffle(this.state.kittens)});
+      this.setState({ score, top_score, message, kittens: this.shuffle(this.state.kittens) });
 
     } else {
       this.endGame();
@@ -44,21 +54,25 @@ class App extends Component {
 
   endGame = () => {
     let top_score = this.state.top_score;
+    let old_top_score = this.state.old_top_score;
     let score = this.state.score;
+    let message = this.state.message;
 
-    if (this.state.top_score < this.state.score) {
-      top_score = score;
-      // this.setState({ top_score: this.state.score });
+    if(old_top_score < top_score){
+      old_top_score = top_score;
+      message = `Wow new high score ${old_top_score}`
+    } else {
+      message = "Sorry try again."
     }
 
-    // this.state.score = 0;
+
     score = 0;
     this.state.kittens.map((kitten, index) => {
       return kitten.selected = false;
       // this.state.kittens[index].selected = false;
 
     })
-    this.setState({score, top_score})
+    this.setState({ score, top_score, old_top_score, message })
   }
 
   shuffle = array => {
@@ -73,14 +87,15 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.kittens)
     return (
       <Router>
         <div>
           <Navbar score={this.state.score} top_score={this.state.top_score} />
           <Jumbotron />
+          <div>
+            <h2>{this.state.message}</h2>
+          </div>
           <Wrapper>
-
             <div className="row mx-5">
               {this.state.kittens.map((kitten, index) => (
                 <ImageCard
