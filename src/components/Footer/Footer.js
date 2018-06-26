@@ -3,9 +3,6 @@ import "./Footer.css";
 import githubLogo from "../../images/github.png";
 import linkedInLogo from "../../images/linkedin.png";
 
-// const imgStyle = {
-//     width: '30%'
-// }
 
 
 const Footer = () => {
@@ -30,6 +27,5 @@ const Footer = () => {
             </div>
         </footer>
     )
-
 }
 export default Footer;

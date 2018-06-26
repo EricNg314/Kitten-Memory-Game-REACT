@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Wrapper from "./components/Wrapper";
 import Home from "./components/Home";
 import Jumbotron from "./components/Jumbotron";
-import Footer from "./components/Footer";
-import kittens from "./kittens.json";
+import Wrapper from "./components/Wrapper";
 import ImageCard from "./components/ImageCard";
+import ModalEnd from "./components/ModalEnd";
+import Footer from "./components/Footer";
 
+import kittens from "./kittens.json";
 import './App.css';
 
 class App extends Component {
@@ -17,7 +18,8 @@ class App extends Component {
     score: 0,
     top_score: 0,
     old_top_score: 0,
-    message: ""
+    message: "",
+    showModal: "d-none"
   };
 
 
@@ -25,20 +27,14 @@ class App extends Component {
     let message = this.state.message;
     let score = this.state.score;
     let top_score = this.state.top_score;
-    let old_top_score = this.state.old_top_score;
     let kitten = this.state.kittens.filter(kitten => kitten.id === id)[0];
-    // console.log("selected kitten", kitten);
-    // console.log(`id: ${id}`);
 
     if (kitten.selected === false) {
       //preparing for different scorings
       message = "";
       score += 1;
-      // this.setState({ score: this.state.score + 1 });
-      // setTimeout(() => console.log(this.state.score), 100);
-      // console.log(kitten);
 
-      if(top_score < score) {
+      if (top_score < score) {
         top_score = score;
       }
 
@@ -57,27 +53,28 @@ class App extends Component {
     let old_top_score = this.state.old_top_score;
     let score = this.state.score;
     let message = this.state.message;
+    let showModal = this.state.showModal;
 
-    if(old_top_score < top_score){
+    showModal = "d-inline";
+
+    if (old_top_score < top_score) {
       old_top_score = top_score;
-      message = `Wow new high score ${old_top_score}`
+      message = `Wow you adopted more kittens than before! New record: ${top_score}!`
     } else {
-      message = "Sorry try again."
+      message = "Hope you adopt more next time."
     }
 
 
     score = 0;
     this.state.kittens.map((kitten, index) => {
       return kitten.selected = false;
-      // this.state.kittens[index].selected = false;
 
     })
-    this.setState({ score, top_score, old_top_score, message })
+
+    this.setState({ score, top_score, old_top_score, message, showModal })
   }
 
   shuffle = array => {
-    // console.log("shuffled");
-
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -86,15 +83,17 @@ class App extends Component {
 
   }
 
+  closeModal = () => {
+    this.setState({ showModal: "d-none" })
+  }
+
+
   render() {
     return (
       <Router>
         <div>
           <Navbar score={this.state.score} top_score={this.state.top_score} />
           <Jumbotron />
-          <div>
-            <h2>{this.state.message}</h2>
-          </div>
           <Wrapper>
             <div className="row mx-5">
               {this.state.kittens.map((kitten, index) => (
@@ -108,6 +107,7 @@ class App extends Component {
               ))}
             </div>
           </Wrapper>
+          <ModalEnd display={" " + this.state.showModal} closeModal={this.closeModal} message={this.state.message} />
           <Footer />
         </div>
       </Router>
