@@ -8,7 +8,7 @@ This application is an example of React being used for a simplified game.
 
 ## Example of App :tv:
 
-![demo](/public/assets/img/.gif)
+![demo](/src/images/Demo.gif)
 
 ## Getting Started :loudspeaker:
 This repository utilizes various packages from React.
@@ -32,7 +32,7 @@ This repository utilizes various packages from React.
     npm start
     ```
 
-4. Go to your browser and type enter http://localhost:3000/ into your address bar. (Or visit the live demo [here](https://ericng314.github.io/Kitten-Memory-Game-REACT/).)
+4. Go to your browser and enter http://localhost:3000/ into your address bar. (Or visit the live demo [here](https://ericng314.github.io/Kitten-Memory-Game-REACT/).)
 
     
 ## Built With :hammer:
@@ -44,11 +44,6 @@ This repository utilizes various packages from React.
 * [NPM - gh-pages](https://www.npmjs.com/package/gh-pages) - Publish files to a gh-pages branch on GitHub (or any other branch anywhere else).
 * [NPM - react](https://www.npmjs.com/package/react) - An npm package to get you immediate access to React, without also requiring the JSX transformer. 
 * [NPM - react-dom](https://www.npmjs.com/package/react-dom) - This package serves as the entry point of the DOM-related rendering paths. It is intended to be paired with the isomorphic React, which will be shipped as react to npm.
-* [NPM - mysql2](https://www.npmjs.com/package/mysql2) - An updated version of the [MySQL](https://www.npmjs.com/package/mysql) package required for Sequelize package.
-* [NPM - sequelize](https://www.npmjs.com/package/sequelize) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, SQLite and Microsoft SQL Server. It features solid transaction support, relations, read replication and more.
-
-
-
 
 
 ## Authors :squirrel: 
