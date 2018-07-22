@@ -50,5 +50,4 @@ This repository utilizes various packages from React.
 * **Eric Ng** [EricNg314](https://github.com/EricNg314)
 
 ## Acknowledgments 
-* Original animations prior to modifications are from Animate.css from Daniel Eden. [Click here](https://github.com/daneden/animate.css)
-* Thanks to [PokeAPI](https://pokeapi.co/) for the image repository.
+* Original animations prior to modifications are from Hover.css from Ian Lunn. [Click here](https://github.com/IanLunn/Hover)
