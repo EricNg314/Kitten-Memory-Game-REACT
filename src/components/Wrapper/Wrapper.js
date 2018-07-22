@@ -3,7 +3,7 @@ import React from "react";
 import "./Wrapper.css";
 
 const Wrapper = props => (
-    <div className = "container">
+    <div className = "container mb-5">
         {props.children}
     </div>
 )

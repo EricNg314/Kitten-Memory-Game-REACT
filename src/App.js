@@ -108,7 +108,7 @@ class App extends Component {
             </div>
           </Wrapper>
           <ModalEnd display={" " + this.state.showModal} closeModal={this.closeModal} message={this.state.message} />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     );
